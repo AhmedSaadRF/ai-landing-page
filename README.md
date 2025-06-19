@@ -44,6 +44,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 4_Add Hero Section Style Classes.    
 5_Finish Button Component.  
 6_Add Button Component Style Classes.    
+7_Finish Logo Ticker Section.  
 
 
 
