@@ -53,7 +53,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 13_Finish Call To Action Section.  
 14_Add Call To Action Section Style Classes.    
 15_Finish Footer Section.  
-
+16_Add Footer Section Style Classes.    
 
 
 
