@@ -45,7 +45,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 5_Finish Button Component.  
 6_Add Button Component Style Classes.    
 7_Finish Logo Ticker Section.  
-6_Add Logo Ticker Section Style Classes.    
+8_Add Logo Ticker Section Style Classes.    
+9_Finish Features Section.  
+
 
 
 
