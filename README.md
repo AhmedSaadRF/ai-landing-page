@@ -47,6 +47,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 7_Finish Logo Ticker Section.  
 8_Add Logo Ticker Section Style Classes.    
 9_Finish Features Section.  
+10_Add Features Section Style Classes.    
+
 
 
 
