@@ -7,7 +7,6 @@ import ProductImage from "@/assets/product-image.png";
 import { ComponentPropsWithoutRef, useEffect, useRef, useState } from "react";
 import {
   animate,
-  easeInOut,
   motion,
   useMotionTemplate,
   useMotionValue,
@@ -50,13 +49,14 @@ const FeatureTab = (
   const xPercentage = useMotionValue(100);
   const yPercentage = useMotionValue(50);
   const maskImage = useMotionTemplate`radial-gradient(80px 80px at ${xPercentage}% ${yPercentage}%, black, transparent)`;
+  
   useEffect(() => {
     if (!tabRef.current || !props.selected) return;
 
     xPercentage.set(0);
     yPercentage.set(0);
 
-    const { width, height } = tabRef.current?.getBoundingClientRect();
+    const { width, height } = tabRef.current.getBoundingClientRect();
     const circumference = height * 2 + width * 2;
     const times = [
       0,
@@ -75,17 +75,19 @@ const FeatureTab = (
 
     animate(xPercentage, [0, 100, 100, 0, 0], options);
     animate(yPercentage, [0, 0, 100, 100, 0], options);
-  }, [props.selected]);
+  }, [props.selected, xPercentage, yPercentage]);
+  
   const handleTabHover = () => {
     if (dotLottieRef.current === null) return;
     dotLottieRef.current.seek(0);
     dotLottieRef.current.play();
   };
+  
   return (
     <div
       ref={tabRef}
       onMouseEnter={handleTabHover}
-      className="border border-white/15 flex p-2.5 rounded-xl gap-2.5 items-center lg:flex-1 relative"
+      className="border border-white/15 flex p-2.5 rounded-xl gap-2.5 items-center lg:flex-1 relative cursor-pointer"
       onClick={props.onClick}
     >
       {props.selected && (
@@ -93,7 +95,7 @@ const FeatureTab = (
           style={{
             maskImage,
           }}
-          className="absolute inset-0 -m-px border border-[#A369FF] rounded-xl [mask-image:]"
+          className="absolute inset-0 -m-px border border-[#A369FF] rounded-xl"
         ></motion.div>
       )}
       <div className="h-12 w-12 border border-white/15 rounded-lg inline-flex items-center justify-center">
@@ -113,6 +115,7 @@ const FeatureTab = (
     </div>
   );
 };
+
 export const Features = () => {
   const [selectedTab, setSelectedTab] = useState(0);
 
@@ -120,7 +123,7 @@ export const Features = () => {
   const backgroundPositionY = useMotionValue(tabs[0].backgroundPositionY);
   const backgroundSizeX = useMotionValue(tabs[0].backgroundSizeX);
   const backgroundPosition = useMotionTemplate`${backgroundPositionX}% ${backgroundPositionY}%`;
-  const backgroundSize = useMotionTemplate`${backgroundSizeX}% + auto`;
+  const backgroundSize = useMotionTemplate`${backgroundSizeX}% auto`;
 
   const handleSelectTab = (index: number) => {
     setSelectedTab(index);
@@ -132,11 +135,6 @@ export const Features = () => {
 
     animate(
       backgroundPositionX,
-      [backgroundPositionX.get(), 100, tabs[index].backgroundPositionX],
-      animateOptions
-    );
-    animate(
-      backgroundPositionX,
       [backgroundPositionX.get(), tabs[index].backgroundPositionX],
       animateOptions
     );
@@ -144,6 +142,12 @@ export const Features = () => {
     animate(
       backgroundPositionY,
       [backgroundPositionY.get(), tabs[index].backgroundPositionY],
+      animateOptions
+    );
+
+    animate(
+      backgroundSizeX,
+      [backgroundSizeX.get(), tabs[index].backgroundSizeX],
       animateOptions
     );
   };
