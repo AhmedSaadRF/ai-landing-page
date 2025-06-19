@@ -43,6 +43,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 3_Finish Hero Section.  
 4_Add Hero Section Style Classes.    
 5_Finish Button Component.  
+6_Add Button Component Style Classes.    
 
 
 
