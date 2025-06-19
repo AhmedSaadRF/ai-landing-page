@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import acmeLogo from '@/assets/logo-acme.png'
 import apexLogo from '@/assets/logo-apex.png'
 import celestialLogo from '@/assets/logo-celestial.png'
@@ -21,9 +22,15 @@ export const LogoTicker = () => {
                 celestialLogo,
                 quantumLogo,
                 pulseLogo,
-                echoLogo
+                echoLogo,
               ].map((logo) => (
-                <img src={logo.src} key={logo.src} className='h-6 w-auto' />
+                <Image
+                  src={logo}
+                  key={logo.src}
+                  alt="Company logo"
+                  className="h-6 w-auto"
+                  height={24}
+                />
               ))}
             </div>
           </div>
