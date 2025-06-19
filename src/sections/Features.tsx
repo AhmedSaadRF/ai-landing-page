@@ -134,6 +134,12 @@ export const Features = () => {
     };
 
     animate(
+      backgroundSizeX,
+      [backgroundSizeX.get(), 100, tabs[index].backgroundSizeX],
+      animateOptions
+    );
+
+    animate(
       backgroundPositionX,
       [backgroundPositionX.get(), tabs[index].backgroundPositionX],
       animateOptions
@@ -142,12 +148,6 @@ export const Features = () => {
     animate(
       backgroundPositionY,
       [backgroundPositionY.get(), tabs[index].backgroundPositionY],
-      animateOptions
-    );
-
-    animate(
-      backgroundSizeX,
-      [backgroundSizeX.get(), tabs[index].backgroundSizeX],
       animateOptions
     );
   };
