@@ -1,3 +1,8 @@
+"use client";
+import { DotLottiePlayer } from "@dotlottie/react-player";
+import Image from "next/image";
+import ProductImage from "@/assets/product-image.png";
+
 const tabs = [
   {
     icon: "/assets/lottie/vroom.lottie",
@@ -26,5 +31,28 @@ const tabs = [
 ];
 
 export const Features = () => {
-  return <section>Features</section>;
+  return (
+    <section>
+      <div>
+        <h2>Elevate your SEO efforts.</h2>
+        <p>From small startups to large enterprises, our AI-driven tool has revolutionized the way businesses approach SEO.</p>
+        <div>
+          {tabs.map(tab => (
+            <div key={tab.title}>
+              <div>
+                <DotLottiePlayer src={tab.icon} autoplay />
+              </div>
+              <div>{tab.title}</div>
+              {tab.isNew && <div>new</div>}
+            </div>
+          ))}
+        </div>
+        <div>
+          <div style={{
+            backgroundImage: `url(${ProductImage.src})`
+          }}></div>
+        </div>
+      </div>
+    </section>
+  );
 };
