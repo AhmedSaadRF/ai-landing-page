@@ -40,4 +40,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 *_Upload Start Up Project Files.  
 1_Finish Header Section.  
 2_Add Header Section Style Classes.    
+3_Finish Hero Section.  
+4_Add Hero Section Style Classes.    
+
+
+
+
+
 
