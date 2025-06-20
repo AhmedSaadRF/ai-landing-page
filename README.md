@@ -58,6 +58,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 18_Finish Logo Ticker Section Animation.  
 19_Finish Features Section Animation.  
 20_Finish Testimonials Section Animation.  
+21_Finish Call To Action Section Animation.
 
 
 
